@@ -32,15 +32,19 @@ dice_sum = 0
 if dice_value not in ["d4", "d6", "d20"]:
     print("Not a valid dice!")
 else:
-    times = int(input("How many times to roll: "))
-    for i in range(times):
-        if dice_value == "d6":
-            print(d6())
-            dice_sum += resultD6
-        elif dice_value == "d20":
-            print(d20())
-            dice_sum += resultD20
-        elif dice_value == "d4":
-            print(d4())
-            dice_sum += resultD4
-    print(f"{times}{dice_value} TOTAL: {dice_sum}")
+    times = int(input("How many times to roll (max 5 rolls): "))
+    if times > 5:
+        print("Too many rolls!")
+    else:
+        for i in range(times):
+            roll = i+1
+            if dice_value == "d6":
+                print(f"{roll} roll : {d6()}")
+                dice_sum += resultD6
+            elif dice_value == "d20":
+                print(f"{roll} roll : {d20()}")
+                dice_sum += resultD20
+            elif dice_value == "d4":
+                print(f"{roll} roll : {d4()}")
+                dice_sum += resultD4
+        print(f"{times}{dice_value} TOTAL: {dice_sum}")
