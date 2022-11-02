@@ -24,8 +24,6 @@ def d20():
 def d4():
     global resultD4
     resultD4 = random.randrange(1, 5)
-    if resultD4 == 4:
-        print("Critical!!!")
     return resultD4
 
 
@@ -34,7 +32,7 @@ dice_sum = 0
 if dice_value not in ["d4", "d6", "d20"]:
     print("Not a valid dice!")
 else:
-    times = int(input("How many dices: "))
+    times = int(input("How many times to roll: "))
     for i in range(times):
         if dice_value == "d6":
             print(d6())
