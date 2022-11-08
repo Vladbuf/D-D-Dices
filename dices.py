@@ -19,7 +19,8 @@ def d4():
     return resultD4
 
 
-dice_value = input("🎲Please select the dice to roll - D4, D6 or D20: ").lower()
+dice_value = input(
+    "Please select which dice to roll - D4, D6 or D20: ").lower()
 dice_sum = 0
 if dice_value not in ["d4", "d6", "d20"]:
     print("Not a valid dice!")
